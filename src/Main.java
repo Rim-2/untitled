@@ -2,17 +2,33 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        int age = 25;
-        System.out.println(age);
+        String mood = "angry";
 
-        age = 26;
-        System.out.println(age);
+        switch (mood) {
+            case "happy":
+                System.out.println("행복해용");
+                break;
+            case "angry":
+                System.out.println("화나용");
+                break;
+            case "sad":
+                System.out.println("슬퍼용");
+                break;
+            default:
+                System.out.println("그냥그래용");
+        }
 
-        double salary = 50000.75;
-        System.out.println(salary);
+        if (mood == "happy") {
+            System.out.println("행복해용");
+        } else if (mood == "angry") {
+            System.out.println("화나용");
+        } else if (mood == "sad") {
+            System.out.println("슬퍼용");
+        } else {
+            System.out.println("그냥그래용");
+        }
 
-        String name = "Rim2";
-        System.out.println(name);
-        System.out.println(name.length());
+        int a = 12;
+        System.out.println(a++);
     }
 }
