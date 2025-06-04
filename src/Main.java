@@ -1,34 +1,24 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        String mood = "angry";
+        int age = 20;
+        boolean hasID = true;
 
-        switch (mood) {
-            case "happy":
-                System.out.println("행복해용");
-                break;
-            case "angry":
-                System.out.println("화나용");
-                break;
-            case "sad":
-                System.out.println("슬퍼용");
-                break;
-            default:
-                System.out.println("그냥그래용");
+        if (age >= 18 && hasID) {
+            System.out.println("접속 가능.");
         }
 
-        if (mood == "happy") {
-            System.out.println("행복해용");
-        } else if (mood == "angry") {
-            System.out.println("화나용");
-        } else if (mood == "sad") {
-            System.out.println("슬퍼용");
+        boolean isWeekend = false;
+        boolean isHoliday = true;
+
+        if (isWeekend || isHoliday) {
+            System.out.println("휴식 가능");
+        }
+
+        boolean isRaining = true;
+        if (!isRaining) {
+            System.out.println("비가 안와용");
         } else {
-            System.out.println("그냥그래용");
+            System.out.println("비가 와용");
         }
-
-        int a = 12;
-        System.out.println(a++);
     }
 }
