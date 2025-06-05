@@ -1,9 +1,13 @@
 public class Main {
+    public static void printStudent(String name, int age) {
+        System.out.println("이름: " + name);
+        System.out.println("나이: " + age);
+        System.out.println("----------------");
+    }
     public static void main(String[] args) {
-        int score = 60;
-
-        String result = (score > 60) ? "합격" : "탈락";
-
-        System.out.println("결과: " + result);
+        System.out.println("===학생 정보 출력===");
+        printStudent("Alice", 20);
+        printStudent("Bob", 22);
+        printStudent("Charlie", 25);
     }
 }
