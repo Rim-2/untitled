@@ -1,9 +1,15 @@
 public class Main {
     public static void main(String[] args) {
-        int number = 5;
+        for (int i = 1; i <= 1000; i++) {
+            if (i % 2 != 0 || i % 3 != 0) {
+                if (i == 100) {
+                    break;
+                }
 
-        for (int i = 1; i <= 9; i++) {
-            System.out.println(number + " x " + i + "= " + (number * i));
+                continue;
+            }
+
+            System.out.println(i);
         }
     }
 }
