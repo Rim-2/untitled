@@ -1,15 +1,9 @@
 public class Main {
     public static void main(String[] args) {
-        for (int i = 1; i <= 1000; i++) {
-            if (i % 2 != 0 || i % 3 != 0) {
-                if (i == 100) {
-                    break;
-                }
+        int score = 60;
 
-                continue;
-            }
+        String result = (score > 60) ? "합격" : "탈락";
 
-            System.out.println(i);
-        }
+        System.out.println("결과: " + result);
     }
 }
