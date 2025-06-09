@@ -1,9 +1,9 @@
 public class Main {
     public static void main(String[] args) {
-        int[] numbers = {1, 2, 3, 4, 5, 6, 7};
+        String address = "0x120819f5573ac3A530e6172b1581613A09b4b338";
 
-        for (int i = numbers.length - 1; i >= 0 ; i--) {
-            System.out.println(numbers[i]);
-        }
+        System.out.println(address.substring(0,7));
+
+        System.out.println(address.substring(address.length()-5));
     }
 }
