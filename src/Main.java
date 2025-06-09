@@ -1,15 +1,14 @@
 public class Main {
+    public static String greet() {
+        return "Hello, World!";
+    }
+
+    public static String greet(String name) {
+        return "Hello, " + name + "!";
+    }
+
     public static void main(String[] args) {
-        char asciiChar = 'A';
-        System.out.println("Character: " + asciiChar);
-
-        int asciiCode= (int) asciiChar;
-        System.out.println("ASCII Code: " + asciiCode);
-
-        char koreanChar = '가';
-        System.out.println("Character: "+ koreanChar);
-
-        int uniCode2 = (int) koreanChar;
-        System.out.println("ASCII Code: U+" + Integer.toHexString(uniCode2).toUpperCase());
+        System.out.println(greet());
+        System.out.println(greet("Alice"));
     }
 }
