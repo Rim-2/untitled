@@ -1,9 +1,18 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        int month = 6;
-        int temperature = 27;
-        double pi = 3.14159;
+        Scanner scanner = new Scanner(System.in);
 
-        System.out.printf("현재는 %d월, 기온: %d, 원주율: %.2f", month, temperature, pi);
+        System.out.println("이름을 입력하세요: ");
+
+        String name = scanner.nextLine();
+
+        System.out.println("이름을 입력하세요: ");
+
+        int age = scanner.nextInt();
+
+        System.out.println("이름: " + name);
+        System.out.println("나이: " + age);
     }
 }
