@@ -2,17 +2,53 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        final String COLA = "코카콜라";
+        final String CIDER = "사이다";
+        final String WATER = "에비앙";
+
+        final int COLA_PRICE = 800;
+        final int CIDER_PRICE = 1500;
+        final int WATER_PRICE = 2000;
+
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("이름을 입력하세요: ");
+        System.out.println("=== 자판기 메뉴 ===");
+        System.out.printf("1. %s (%d원)\n", COLA, COLA_PRICE);
+        System.out.printf("2. %s (%d원)\n", CIDER, CIDER_PRICE);
+        System.out.printf("3. %s (%d원)\n", WATER, WATER_PRICE);
 
-        String name = scanner.nextLine();
+        String choice = scanner.nextLine();
+        int price = 0;
+        String item = "";
 
-        System.out.println("이름을 입력하세요: ");
+        switch (choice) {
+            case COLA:
+                item = COLA;
+                price = COLA_PRICE;
+                break;
+            case CIDER:
+                item = CIDER;
+                price = CIDER_PRICE;
+                break;
+            case WATER:
+                item = WATER;
+                price = WATER_PRICE;
+                break;
+            default:
+                System.out.println("잘못된 선택입니다.");
+                return;
+        }
 
-        int age = scanner.nextInt();
+        System.out.println(item + "을(를) 선택하셨습니다. 금액을 넣어주세요: ");
+        int money = scanner.nextInt();
 
-        System.out.println("이름: " + name);
-        System.out.println("나이: " + age);
+        if(money < price) {
+            System.out.println("금액이 부족합니다. 거래를 취소합니다.");
+        } else {
+            int change = money - price;
+            System.out.printf("%s을(를) 드립니다. 잔돈은 %d입니다.\n", item, change);
+        }
+
+        System.out.println("빠이빠이");
     }
 }
