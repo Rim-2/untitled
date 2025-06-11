@@ -1,31 +1,29 @@
-class Person {
-    String name;
-    int age;
-    boolean hasJob;
-    String job;
 
-    public void sayHello() {
-        System.out.println("안녕하세요." + name + "입니다. 저의 나이는" + age + "세 입니다.");
+class Car {
+    String brand;
+    int year;
+    int number;
+    String color;
+
+    public Car() {
     }
 
-    public void sayJob() {
-        if (hasJob) {
-            System.out.println("저는 무직입니다.");
-        } else {
-            System.out.println("제 직업은 " + job + "입니다.");
-        }
+    public Car(String brand, int year, int number, String color) {
+        this.brand = brand;
+        this.year = year;
+        this.number = number;
+        this.color = color;
+    }
+
+    public void displayInfo() {
+        System.out.println("Car brand: " + brand + ", year: " + year + ", number: " + number + ", color: " + color);
     }
 }
 
 
 public class Main {
     public static void main(String[] args) {
-        Person person = new Person();
-        person.name = "Alice";
-        person.hasJob = true;
-        person.job = "개발자";
-
-        person.sayHello();
-        person.sayJob();
+        Car car = new Car("현대", 2024, 9212, "검정색");
+        car.displayInfo();
     }
 }
