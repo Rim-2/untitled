@@ -1,32 +1,19 @@
-class Person {
-    private String name;
-    private int age;
+class ReadOnlyStudent {
+    private final int score;
 
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
+    public ReadOnlyStudent(int score) {
+        this.score = score;
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        if (age < 18) {
-            System.out.println("성인만 가입 가능합니다.");
-        } else {
-            this.age = age;
-        }
+    public int getScore() {
+        return score;
     }
 }
 
 public class Main {
     public static void main(String[] args) {
-        Person person = new Person();
+        ReadOnlyStudent res = new ReadOnlyStudent(100);
 
-        person.setName("Rim2");
-        System.out.println(person.getName());
+        System.out.println(res.getScore());
     }
 }
