@@ -1,19 +1,45 @@
-class ReadOnlyStudent {
-    private final int score;
+abstract class Shape {
+    abstract double area();
+}
 
-    public ReadOnlyStudent(int score) {
-        this.score = score;
+class Circle extends Shape {
+    double radious;
+
+    public Circle(double radious) {
+        this.radious = radious;
     }
 
-    public int getScore() {
-        return score;
+    @Override
+    public double area() {
+        return radious * radious * Math.PI;
     }
 }
 
+class Rectangle extends Shape {
+    double height;
+    double width;
+
+    public Rectangle (double height, double length) {
+        this.height = height;
+        this.width = length;
+    }
+
+    @Override
+    public double area() {
+        return height * width;
+    }
+}
+
+
 public class Main {
     public static void main(String[] args) {
-        ReadOnlyStudent res = new ReadOnlyStudent(100);
+        Shape[] shapes = new Shape[2];
 
-        System.out.println(res.getScore());
+        shapes[0] = new Circle(3);
+        shapes[1] = new Rectangle(4, 5);
+
+        for (Shape shape:shapes) {
+            System.out.println(shape.area());
+        }
     }
 }
