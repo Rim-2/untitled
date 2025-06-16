@@ -1,16 +1,16 @@
-interface Greeting {
-    void greet();
+interface Calculator {
+    int compute(int a, int b);
 }
 
 public class Main {
     public static void main(String[] args) {
-        Greeting greeting = new Greeting() {
+        Calculator calculator = new Calculator() {
             @Override
-            public void greet() {
-                System.out.println("익명 클래스를 사용하여 출력한 문장입니다.");
+            public int compute(int a, int b) {
+                return a % b;
             }
         };
 
-        greeting.greet();
+        System.out.println(calculator.compute(3, 6));
     }
 }
