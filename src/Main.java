@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 class Box {
@@ -11,16 +12,9 @@ class Box {
 
 public class Main {
     public static void main(String[] args) {
-        List<Integer> numbers = new ArrayList<>();
-        numbers.add(1);
-        numbers.add(2);
-        numbers.add(3);
-        numbers.add(4);
-        numbers.add(5);
-        List<String> words = new ArrayList<>();
-        words.add("apple");
-        words.add("banana");
-        words.add("cherry");
+        List<Integer> numbers =  new ArrayList<>(List.of(1, 2, 3, 4, 5)); // 방법 1
+
+        List<String> words = new ArrayList<>(Arrays.asList("apple", "banana", "cherry")); // 방법 2
 
         Box.displayArray(numbers);
         Box.displayArray(words);
