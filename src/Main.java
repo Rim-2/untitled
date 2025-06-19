@@ -1,16 +1,17 @@
-interface Calculator {
-    int compute(int a, int b);
+class Box {
+    public static <T> void displayArray(T[] array) {
+        for (T element : array) {
+            System.out.println(element);
+        }
+    }
 }
 
 public class Main {
     public static void main(String[] args) {
-        Calculator calculator = new Calculator() {
-            @Override
-            public int compute(int a, int b) {
-                return a % b;
-            }
-        };
+        Integer[] numbers = {1, 2, 3, 4, 5};
+        String[] words = {"apple", "banana", "cherry"};
 
-        System.out.println(calculator.compute(3, 6));
+        Box.displayArray(numbers);
+        Box.displayArray(words);
     }
 }
