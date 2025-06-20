@@ -1,13 +1,15 @@
-class MyThread extends Thread {
+class MyRunnable implements Runnable {
+
     @Override
     public void run() {
-        for(int i = 1; i <= 5; i++) {
-            System.out.println("My Thread: " + i);
+        System.out.println("Runnable 실행 중");
 
+        for (int i = 1; i <= 5; i++) {
             try {
                 Thread.sleep(5000);
-            } catch(InterruptedException e) {
-                System.out.println("누가 꺠웠어?");
+                System.out.println(i);
+            } catch (InterruptedException e) {
+                System.out.println(e.getMessage());
             }
         }
     }
@@ -15,11 +17,10 @@ class MyThread extends Thread {
 
 public class Main {
     public static void main(String[] args) {
-        MyThread thread = new MyThread();
+        Thread thread = new Thread(new MyRunnable(), "Count Thread");
 
         thread.start();
 
-        System.out.println("일어나!");
-        thread.interrupt();
+        System.out.println(thread.getName());
     }
 }
