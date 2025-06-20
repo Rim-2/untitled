@@ -1,22 +1,26 @@
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-class Box {
-    public static <T> void displayArray(List<T> array) {
-        for(T element: array) {
-            System.out.println(element);
-        }
-    }
-}
-
 public class Main {
     public static void main(String[] args) {
-        List<Integer> numbers =  new ArrayList<>(List.of(1, 2, 3, 4, 5)); // 방법 1
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
 
-        List<String> words = new ArrayList<>(Arrays.asList("apple", "banana", "cherry")); // 방법 2
 
-        Box.displayArray(numbers);
-        Box.displayArray(words);
+        int result = numbers.stream()
+                .filter((n) -> n % 2 == 0)
+                .mapToInt(Integer::intValue)
+                .sum();
+
+        System.out.println(result);
+
+//        int sum = 0;
+//
+//        for (int number : numbers){
+//            if (number % 2 == 0) {
+//                sum += number;
+//            }
+//        }
+//
+//        System.out.println(sum);
     }
 }
