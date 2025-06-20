@@ -1,15 +1,25 @@
-import java.util.Arrays;
-import java.util.List;
+class MyThread extends Thread {
+    @Override
+    public void run() {
+        for(int i = 1; i <= 5; i++) {
+            System.out.println("My Thread: " + i);
+
+            try {
+                Thread.sleep(5000);
+            } catch(InterruptedException e) {
+                System.out.println("누가 꺠웠어?");
+            }
+        }
+    }
+}
 
 public class Main {
     public static void main(String[] args) {
-        List<Double> value = Arrays.asList(10.0, 20.0, 30.0);
+        MyThread thread = new MyThread();
 
-        double avg = value.stream()
-                .mapToDouble(Double::doubleValue)
-                .average()
-                .orElse(0.0);
+        thread.start();
 
-        System.out.println(avg);
+        System.out.println("일어나!");
+        thread.interrupt();
     }
 }
