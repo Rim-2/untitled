@@ -1,8 +1,13 @@
 public class Main {
+    @SuppressWarnings("rawtypes")
     public static void main(String[] args) {
-        Calculator calculator = new Calculator();
+        java.util.List list = new java.util.ArrayList();
 
-        System.out.println(calculator.add(1, 2));;
-        System.out.println(calculator.addNumber(2, 4));;
+        list.add("Hello");
+        list.add("World");
+
+        for (Object obj: list) {
+            System.out.println(obj);
+        }
     }
 }
